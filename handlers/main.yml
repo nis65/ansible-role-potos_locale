@@ -2,5 +2,5 @@
 
 - name: Reconfigure locales
   ansible.builtin.command:
-    cmd: "dpkg-reconfigure -f noninteractive"
+    cmd: "dpkg-reconfigure -f noninteractive locales"
   changed_when: true
