@@ -12,3 +12,10 @@
     regexp: "^LANG="
     line: "LANG=de_CH.UTF-8"
   notify: Reconfigure locales
+
+- name: Install GUI language packs
+  ansible.builtin.apt:
+    pkg:
+      - language-pack-gnome-de-base
+
+
