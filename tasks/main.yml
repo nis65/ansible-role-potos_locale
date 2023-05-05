@@ -2,7 +2,7 @@
 
 - name: Ensure locale exists
   community.general.locale_gen:
-    name: de_CH.UTF-8
+    name: {{ potos_locale_lang }}
     state: present
   notify: Reconfigure locales
 
@@ -10,7 +10,9 @@
   ansible.builtin.lineinfile:
     dest: "/etc/default/locale"
     regexp: "^LANG="
-    line: "LANG=de_CH.UTF-8"
+    line: "LANG={{ potos_locale_lang }}"
+    state: present
+    backup: no
   notify: Reconfigure locales
 
 - name: Install GUI language packs
