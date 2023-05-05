@@ -17,4 +17,4 @@
 
 - name: Install GUI language packs
   ansible.builtin.apt:
-    pkg: {{ potos_locale_pkgs }}
+    pkg: "{{ potos_locale_pkgs }}"
