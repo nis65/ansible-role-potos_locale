@@ -1,12 +1,14 @@
 ---
 
-- name: DEBUG
-  ansible.builtin.debug:
-    msg: "message"
-
 - name: Ensure locale exists
   community.general.locale_gen:
     name: de_CH.UTF-8
     state: present
   notify: Reconfigure locales
 
+- name: set default locale
+  ansible.builtin.lineinfile:
+    dest: "/etc/default/locale"
+    regexp: "^LANG="
+    line: "LANG=de_CH.UTF-8"
+  notify: Reconfigure locales
