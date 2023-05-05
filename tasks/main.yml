@@ -2,7 +2,7 @@
 
 - name: Ensure locale exists
   community.general.locale_gen:
-    name: {{ potos_locale_lang }}
+    name: "{{ potos_locale_lang }}"
     state: present
   notify: Reconfigure locales
 
