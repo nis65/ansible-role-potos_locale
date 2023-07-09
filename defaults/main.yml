@@ -1,7 +1,5 @@
 ---
 
-# Example variable
-# potos_template_example_var: 'hello world!'
-
-# List of items used for action xyz
-# potos_template_example_list: []
+potos_locale_lang: "de_CH.UTF-8"
+potos_locale_pkgs:
+  - language-pack-gnome-de-base

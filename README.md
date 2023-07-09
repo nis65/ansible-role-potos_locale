@@ -1,9 +1,15 @@
 
-# Ansible Role - potos\_template
+# Ansible Role - potos\_locale
 
-Role to use as template for new roles of Potos Linux Clients.
+This role works for me, but does not satisfy the potos acceptance rules yet:
 
-[![Test](https://github.com/projectpotos/ansible-role-potos_template/actions/workflows/test.yml/badge.svg)](https://github.com/projectpotos/ansible-role-potos_template/actions/workflows/test.yml)
+* the automated checks are currently failing
+* meta is not up to date
+
+Role to set the systemwide `LANG` in `/etc/default/locale`.
+Ensures that the relevant locale is generated. Furthermore,
+it allows to install arbitrary packages via apt. It is
+recommended to use it for language specific packages only.
 
 ## Example Playbook
 
@@ -29,12 +35,9 @@ The default variables are defined in [defaults/main.yml](./defaults/main.yml):
 ```yaml
 ---
 
-# Example variable
-potos_template_example_var: 'hello world!'
-
-# List of items used for action xyz
-potos_template_example_list: []
-
+potos_locale_lang: "de_CH.UTF-8"
+potos_locale_pkgs:
+  - language-pack-gnome-de-base
 ```
 
 Another option is to use `ansible-doc` to read the argument specification:
