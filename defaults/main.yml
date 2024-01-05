@@ -3,3 +3,10 @@
 potos_locale_lang: "de_CH.UTF-8"
 potos_locale_pkgs:
   - language-pack-gnome-de-base
+  - texlive-lang-german
+  - libreoffice-help-de
+  - libreoffice-l10n-de
+  - hunspell-de-ch-frami
+  - hyphen-de
+  - mythes-de
+  - mythes-de-ch
